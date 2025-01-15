@@ -1,0 +1,61 @@
+/* px-3 py-2 rounded bg-orange-800 hover:bg-orange text-white dark:bg-orange-800 dark:hover:bg-orange-800" */
+
+.divider-wrapper {
+  display: flex;
+  text-transform: uppercase;
+  border: none;
+  font-weight: 400;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+}
+
+.divider-wrapper::before,
+.divider-wrapper::after {
+  content: "";
+  border-bottom: 1px solid black;
+  flex: 1 0 auto;
+  height: 0.5em;
+  margin: 0;
+}
+
+.divider {
+  text-align: center;
+  flex: 0.2 0 auto;
+  margin: 0;
+}
+
+@media (max-width: 388px) {
+  .themename {
+    display: none;
+  }
+}
+
+.custom-confirm-button {
+  background-color: #4caf50; /* Green color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 3px;
+}
+
+.custom-confirm-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.custom-cancel-button {
+  background-color: #f44336; /* Red color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.custom-cancel-button:hover {
+  background-color: #e53935; /* Darker red on hover */
+}

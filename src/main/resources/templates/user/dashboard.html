@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script},'')}">
+  <head>
+    <title data-th-text="${User.name}+' |  Dashboard'"></title>
+  </head>
+  <body>
+    <div id="content">
+      <div>
+        <div class="flex justify-center flex-col items-center space-y-4 font-semibold">
+          <div class="text-6xl text-center flex flex-col">
+            <span>Welcome </span><span data-th-text="${User.name}"></span>
+          </div>
+
+          <div class="bg-white p-4 rounded shadow-md text-center dark:bg-gray-800">
+            <h3 class="text-lg">Total Contacts</h3>
+            <p th:text="${totalContacts}"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      console.log("this is dashboard page");
+    </script>
+  </body>
+</html>
