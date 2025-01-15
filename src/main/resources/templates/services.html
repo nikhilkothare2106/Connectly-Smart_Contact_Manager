@@ -1,22 +1,27 @@
 <!DOCTYPE html>
-<html
-        lang="en"
-        th:replace="~{base :: parent(~{::#content},~{::title},~{::script}, 'services1')}"
->
-<head>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script}, 'services1')}">
+  <head>
     <title>Services</title>
-</head>
-<body>
-<section id="content">
-    <h1>Welcome to services page</h1>
-    <h2>Services offered by SCM</h2>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas dolore
-    assumenda rerum harum mollitia incidunt nesciunt dignissimos esse
-    dicta reprehenderit quam, quisquam aspernatur enim consequatur
-    accusamus, minima alias odit ducimus.
-</section>
-<script>
-    console.log("services page");
-</script>
-</body>
+  </head>
+  <body>
+    <section id="content">
+      <p class="m-4 text-justify">
+        Smart Contact Manager offers a comprehensive set of features to help you manage your
+        contacts with ease and security. We ensure secure access with User Authentication that
+        includes multi-factor authentication, role-based access, and integration with trusted
+        third-party platforms like Google for easy login. Our Contact Management tools allow you to
+        add, edit, and organize contacts effortlessly, while bulk import/export options simplify
+        data handling. With our powerful Search and Filter tools, you can quickly find any contact
+        using real-time search and customizable filters. Our secure Cloud Storage ensures your
+        contacts are always accessible, with syncing across devices and offline access available.
+        Your data is protected with Data Security features like end-to-end encryption and compliance
+        with privacy standards such as GDPR and CCPA. Finally, our Responsive Design ensures a
+        seamless experience on any device, offering a user-friendly interface with light and dark
+        mode options.
+      </p>
+    </section>
+    <script>
+      console.log("services page");
+    </script>
+  </body>
 </html>

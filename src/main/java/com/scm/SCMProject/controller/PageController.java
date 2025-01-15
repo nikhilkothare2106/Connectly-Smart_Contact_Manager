@@ -51,13 +51,12 @@ public class PageController {
 
     @GetMapping("/about")
     public String aboutPage(Model model) {
-        System.out.println("About page loading");
+
         return "about";
     }
 
     @GetMapping("/services")
     public String servicesPage() {
-        System.out.println("services page loading");
         return "services";
     }
 
@@ -95,7 +94,7 @@ public class PageController {
             User savedUser = userService.saveUser(user);
             System.out.println("User Saved! " + savedUser);
 
-            Message message = Message.builder().content("Registration Successful!").type(MessageType.green).build();
+            Message message = Message.builder().content("Verification link sent to email address! ").type(MessageType.green).build();
             session.setAttribute("message", message);
         }
 
@@ -106,7 +105,7 @@ public class PageController {
     public String verifyEmail(@RequestParam("token") String token, HttpSession session) {
         User user = userService.getUserByVerificationToken(token);
 
-        System.out.println(user + " : user");
+      //  System.out.println(user + " : user");
 
         if (user != null) {
             user.setEmailVerified(true);
@@ -118,7 +117,7 @@ public class PageController {
             return "success_page";
         }
         session.setAttribute("message", Message.builder().content("Invalid Token!").type(MessageType.red).build());
-        System.out.println(user + " : user");
+     //   System.out.println(user + " : user");
         return "error_page";
     }
 

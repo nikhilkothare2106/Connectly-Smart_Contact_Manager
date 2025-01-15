@@ -1,4 +1,4 @@
-const baseURL = "https://smart-contact-manager-xxmj.onrender.com";
+const baseURL = "https://connectly-smart-contact-manager.onrender.com";
 const viewContactModal = document.getElementById("view_contact_modal");
 
 // options with default values
