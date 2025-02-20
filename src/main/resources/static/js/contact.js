@@ -1,4 +1,5 @@
-const baseURL = "https://connectly-smartcontactmanager-production.up.railway.app";
+const baseURL = document.querySelector("#domainUrl").textContent;
+// console.log(`${baseURL}`);
 const viewContactModal = document.getElementById("view_contact_modal");
 
 // options with default values

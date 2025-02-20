@@ -14,6 +14,7 @@ import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -36,6 +37,9 @@ public class ContactController {
 
     @Autowired
     private ImageService imageService;
+
+    @Value("${spring.url}")
+    private String url;
 
     private static Contact getContact(ContactForm contactForm, User user, String fileUrl, String fileName) {
         Contact contact = new Contact();
@@ -115,6 +119,8 @@ public class ContactController {
         Page<Contact> pageContact = contactService.getByUser(user, page, size, sortBy, direction);
         model.addAttribute("pageContact", pageContact);
         model.addAttribute("contactSearchForm", new ContactSearchForm());
+        model.addAttribute("domainUrl", url);
+
         return "user/contacts";
     }
 
