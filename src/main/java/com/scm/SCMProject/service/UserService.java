@@ -1,6 +1,7 @@
 package com.scm.SCMProject.service;
 
 import com.scm.SCMProject.entity.User;
+import com.scm.SCMProject.forms.EditForm;
 
 import java.util.List;
 import java.util.Optional;
@@ -26,5 +27,7 @@ public interface UserService {
     User getUserByEmail(String email);
 
     User getUserByVerificationToken(String token);
+
+     User updateUser(EditForm editForm);
 
 }

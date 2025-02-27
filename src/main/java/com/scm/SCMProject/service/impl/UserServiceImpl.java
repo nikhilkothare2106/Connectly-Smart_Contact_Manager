@@ -2,6 +2,7 @@ package com.scm.SCMProject.service.impl;
 
 import com.scm.SCMProject.Repository.UserRepo;
 import com.scm.SCMProject.entity.User;
+import com.scm.SCMProject.forms.EditForm;
 import com.scm.SCMProject.service.EmailService;
 import com.scm.SCMProject.service.UserService;
 import org.slf4j.Logger;
@@ -110,6 +111,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getUserByVerificationToken(String token) {
         return userRepo.findByEmailToken(token).orElse(null);
+    }
+
+    public User updateUser(EditForm editForm) {
+        User user1 = this.getUserByEmail(editForm.getEmail());
+        user1.setName(editForm.getName());
+        user1.setAbout(editForm.getAbout());
+        user1.setPhoneNumber(editForm.getPhoneNumber());
+        return userRepo.save(user1);
     }
 
 }
