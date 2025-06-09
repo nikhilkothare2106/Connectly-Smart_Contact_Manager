@@ -56,7 +56,10 @@ public class SecurityConfig {
                             .successHandler(oAuthAuthenticationSuccessHandler);
                 })
                 .logout(logout ->
-                        logout.logoutSuccessHandler(logoutSuccessHandler))
+
+                        logout
+                                .logoutUrl("/logout")
+                                .logoutSuccessHandler(logoutSuccessHandler))
 
                 .build();
     }
