@@ -6,7 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class ScmProjectApplication {
-    Dotenv dotenv = Dotenv.configure().directory("./").load();
 
     public static void main(String[] args) {
         SpringApplication.run(ScmProjectApplication.class, args);
